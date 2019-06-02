@@ -39,11 +39,12 @@ class KSELoginViewController: UIViewController, KSEViewControllerType {
     func handleSubmitResult(_ result: KSResult<KSPerson>) {
         switch result {
         case .success( _):
-            print("Validation Success, will load events")
+            print("Validation Success, will load events or signup")
             submitButton.stopAnimation(animationStyle: .expand, revertAfterDelay: 1.0, completion: nil)
-        case .error( _):
-            print("Validation failed, will load signup")
-            submitButton.stopAnimation(animationStyle: .expand, revertAfterDelay: 1.0, completion: nil)
+        case .error( let error):
+            print("Validation failed")
+            submitButton.stopAnimation(animationStyle: .shake, revertAfterDelay: 1.0, completion: nil)
+            view.showToast(error)
         case .loading:
             submitButton.startAnimation()
             

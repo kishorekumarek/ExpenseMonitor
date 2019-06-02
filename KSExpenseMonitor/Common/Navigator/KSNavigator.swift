@@ -14,4 +14,8 @@ class KSNavigator {
         
     }
     
+    func toEvents(email: String) {
+        
+    }
+    
 }

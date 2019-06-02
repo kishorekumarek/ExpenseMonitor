@@ -10,6 +10,10 @@ import Foundation
 import RxCocoa
 import RxSwift
 
+//enum LoginResult {
+//     case success, invalidEmail, invalidPhone, loading
+//}
+
 class KSELoginViewModel: KSEViewModelType {
     
     private let repository: KSPersonRepository
@@ -29,8 +33,26 @@ class KSELoginViewModel: KSEViewModelType {
     }
     
     func transform(input: KSELoginViewModel.Input) -> KSELoginViewModel.Output {
-        
-        let result = input.submitTrigger.flatMapLatest { return self.repository.getPerson(emailOrPhone: $0).asDriver(onErrorJustReturn: KSResult.error("Unexpected Error")) }
+        let result = input.submitTrigger.flatMapLatest { str -> Driver<(String, KSResult<KSPerson>)> in
+            if str.isValidEmail() {
+                return self.repository.getPerson(emailOrPhone: str).asDriver(onErrorJustReturn: KSResult.error(KSError.unknownError.description)).map{ (str, $0)}
+            } else {
+                return Observable.just(KSResult<KSPerson>.error("Invalid Data")).asDriver(onErrorJustReturn: KSResult.error(KSError.unknownError.description)).map{ (str, $0)}
+            }
+            }.do(onNext: { (result) in
+                switch result.1 {
+                case .success:
+                    self.navigator.toSignUp(email: result.0)
+                    break
+                case .error(let error):
+                    if error == KSError.personNotFound.description {
+                        self.navigator.toEvents(email: result.0)
+                    }
+                    break
+                default:
+                    print("")
+                }
+            }).map { $0.1 }
         
         return Output(result: result)
     }

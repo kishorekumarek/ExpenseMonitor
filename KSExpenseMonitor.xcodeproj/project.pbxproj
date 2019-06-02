@@ -31,6 +31,8 @@
 		0EE7C01422A146E100B6814D /* KSPersonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C01322A146E100B6814D /* KSPersonRepository.swift */; };
 		0EE7C01722A148AB00B6814D /* KSNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C01622A148AB00B6814D /* KSNavigator.swift */; };
 		0EE7C01922A14B8300B6814D /* KSUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C01822A14B8300B6814D /* KSUtil.swift */; };
+		0EE7C01B22A1524C00B6814D /* FCToast+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C01A22A1524C00B6814D /* FCToast+View.swift */; };
+		0EE7C01D22A1558500B6814D /* KSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE7C01C22A1558500B6814D /* KSError.swift */; };
 		8FF9E338A1CDF20F6B8E812E /* Pods_KSExpenseMonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3803CCAB7B0DFBCDADC230CC /* Pods_KSExpenseMonitorTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		0EE7C01322A146E100B6814D /* KSPersonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSPersonRepository.swift; sourceTree = "<group>"; };
 		0EE7C01622A148AB00B6814D /* KSNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSNavigator.swift; sourceTree = "<group>"; };
 		0EE7C01822A14B8300B6814D /* KSUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSUtil.swift; sourceTree = "<group>"; };
+		0EE7C01A22A1524C00B6814D /* FCToast+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FCToast+View.swift"; sourceTree = "<group>"; };
+		0EE7C01C22A1558500B6814D /* KSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSError.swift; sourceTree = "<group>"; };
 		3803CCAB7B0DFBCDADC230CC /* Pods_KSExpenseMonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KSExpenseMonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B5A1BC493840BC8E5121F5 /* Pods_KSExpenseMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KSExpenseMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E036C9D1F589CFDD64C9FF4 /* Pods-KSExpenseMonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSExpenseMonitorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KSExpenseMonitorTests/Pods-KSExpenseMonitorTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -219,9 +223,11 @@
 		0EE7BFFA22A123AB00B6814D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0EE7C01A22A1524C00B6814D /* FCToast+View.swift */,
 				0EE7BFFB22A123E200B6814D /* FCActivityIndicator.swift */,
 				0EE7BFFC22A123E200B6814D /* FCErrorTracker.swift */,
 				0EE7C01822A14B8300B6814D /* KSUtil.swift */,
+				0EE7C01C22A1558500B6814D /* KSError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -481,7 +487,9 @@
 				0EE7C00B22A135C900B6814D /* KSWorkItem.swift in Sources */,
 				0EE7BFED22A118AC00B6814D /* KSELoginViewModel.swift in Sources */,
 				0EE7C00322A1256700B6814D /* KSEEventsRepository.swift in Sources */,
+				0EE7C01B22A1524C00B6814D /* FCToast+View.swift in Sources */,
 				0EE7BFF922A11E7A00B6814D /* KSEViewModelType.swift in Sources */,
+				0EE7C01D22A1558500B6814D /* KSError.swift in Sources */,
 				0EE7C01722A148AB00B6814D /* KSNavigator.swift in Sources */,
 				0EE7BFFD22A123E200B6814D /* FCActivityIndicator.swift in Sources */,
 				0EE7C00F22A1380B00B6814D /* KSWorkItemRepository.swift in Sources */,

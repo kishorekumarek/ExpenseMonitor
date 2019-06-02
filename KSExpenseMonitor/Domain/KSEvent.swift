@@ -13,6 +13,5 @@ struct KSEvent {
     let name: String
     let date: String
     let createdBy: KSPerson
-    var mainPeople: [KSPerson]?
     var stakeHolders: [KSPerson]?
 }
